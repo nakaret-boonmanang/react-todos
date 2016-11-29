@@ -1,10 +1,11 @@
 import React, {PropTypes} from 'react'
 
-const Todo = ({onCheckboxClicked, onDeleted, completed, title}) => (
+const Todo = ({onCheckboxClicked, onUpdated, onDeleted, completed, title}) => (
 	<li onClick={onCheckboxClicked} style={{textDecoration: (completed) ? 'line-throught' : 'none'}}>
 		<input type="checkbox" />
 		{' '}
 		{title}
+		{' '}
 		<a onClick={onDeleted}>x</a>
 	</li>
 )

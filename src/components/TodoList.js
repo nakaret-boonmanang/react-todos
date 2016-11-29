@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react'
 import Todo from './Todo'
 
 const TodoList = ({todos, onTodoClicked, onTodoDeleted, onTodoUpdated}) => (
-	<ul>
+	<ul style={{margin:'0px', padding: '0px'}}>
 		{todos.map(todo =>
 			<Todo 
 				key={todo.id}
@@ -26,3 +26,5 @@ TodoList.PropTypes = {
 	onTodoDeleted: PropTypes.func.isRequired,
 	onTodoUpdated: PropTypes.func.isRequired
 }		
+
+export default TodoList
