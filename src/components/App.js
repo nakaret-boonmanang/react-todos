@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from 'react'
+import Filter from './Filter'
+import VisibleTodoList from '../containers/VisibleTodoList'
 
-class App extends Component {
-  render() {
-    return (
+const App = () => (
       <div>
-        Hello
+        <Filter />
+        <VisibleTodoList />
       </div>
-    );
-  }
-}
+)
 
 export default App;
