@@ -1,29 +1,43 @@
+const todo = (state, action) => {
+  switch (action.type) {
+    case 'ADD_TODO':
+      return {
+        id: action.id,
+        title: action.title,
+        completed: false
+      }
+    case 'COMPLETE_TODO':
+      if (state.id !== action.id) {
+        return state
+      }
+
+      return {
+        ...state,
+        completed: !state.completed
+      }
+    default:
+      return state
+  }
+}
+
 const todos = (state = [], action) => {
 	switch (action.type){
 		case 'ADD_TODO':
 			return [
 				...state,
-				{
-					id: action.id,
-					title: action.title,
-					completed: false
-				}
+				todo(undefined, action)
 			]
-		case 'CLICK_TODO_CHECKBOX':
-			// return state.map(t => 
-			// 	if(t.id !== action.id){
-			// 		return state
-			// 	}
-			// 	return {
-			// 		..state,
-			// 		completed: !state.completed
-			// 	}
-			// )
-			return state
+		case 'COMPLETE_TODO':
+			return state.map(t =>
+		        todo(t, action)
+		     )
 		case 'UPDATE_TODO':
 			break;
-		case 'DELETE_TODO':
-			break;
+		case 'REMOVE_TODO':
+			let newState = state.filter(function(obj){
+				return obj.id !== action.id;
+			})
+			return newState;
 		default:
 			return state
 	}

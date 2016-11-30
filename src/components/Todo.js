@@ -1,19 +1,23 @@
 import React, {PropTypes} from 'react'
+import RemoveTodo from '../containers/RemoveTodo'
+import DoneTodo from '../containers/DoneTodo'
 
-const Todo = ({onCheckboxClicked, onUpdated, onDeleted, completed, title}) => (
-	<li onClick={onCheckboxClicked} style={{textDecoration: (completed) ? 'line-throught' : 'none'}}>
-		<input type="checkbox" />
-		{' '}
-		{title}
-		{' '}
-		<a onClick={onDeleted}>x</a>
-	</li>
-)
+const Todo = ({onCompleted, onUpdated, onRemoved, id, completed, title}) => {
+	return (
+		<li>
+			<DoneTodo id={id} />
+			{' '}
+			<a style={{textDecoration: (completed) ? 'line-throught' : 'none'}}>{title}</a> 
+			{' '}
+			<RemoveTodo id={id} />
+		</li>
+	)
+}
 
 Todo.PropTypes = {
-	onCheckboxClicked: PropTypes.func.isRequired,
+	onCompleted: PropTypes.func.isRequired,
 	onUpdated: PropTypes.func.isRequired,
-	onDeleted: PropTypes.func.isRequired,
+	onRemoved: PropTypes.func.isRequired,
 	completed: PropTypes.bool.isRequired,
 	title: PropTypes.string.isRequired
 }

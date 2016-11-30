@@ -11,9 +11,10 @@ export const setFilterVisibility = (filter) => ({
 	filter
 })
 
-export const clickTodoCheckbox = (id) => ({
-	type: 'CLICK_TODO_CHECKBOX',
-	id
+export const completeTodo = (id, completed) => ({
+	type: 'COMPLETE_TODO',
+	id,
+	completed
 })
 
 export const updateTodo = (id, title) => ({
@@ -22,7 +23,12 @@ export const updateTodo = (id, title) => ({
 	title
 })
 
-export const deleteTodo = (id) => ({
-	type: 'DELETE_TODO',
+export const removeTodo = (id) => ({
+	type: 'REMOVE_TODO',
+	id
+})
+
+export const selectTodo = (id) => ({
+	type: 'SELECT_TODO',
 	id
 })

@@ -1,16 +1,17 @@
 import React, {PropTypes} from 'react'
 import Todo from './Todo'
 
-const TodoList = ({todos, onTodoClicked, onTodoDeleted, onTodoUpdated}) => (
+const TodoList = ({todos, onTodoCompleted, onTodoRemoved, onTodoUpdated}) => (
 	<ul style={{margin:'0px', padding: '0px'}}>
 		{todos.map(todo =>
 			<Todo 
 				key={todo.id}
-				title={() => todo.title}
-				completed={() => todo.completed}
-				onCheckboxClicked={() => onTodoClicked(todo.id)}
+				id={todo.id}
+				title={todo.title}
+				completed={todo.completed}
+				onCompleted={() => onTodoCompleted(todo.id)}
 				onUpdated={() => onTodoUpdated(todo.id, todo.title)}
-				onDeleted={() => onTodoDeleted(todo.id)}
+				onDeleted={() => onTodoRemoved(todo.id)}
 			/>
 		)}
 	</ul>
@@ -23,7 +24,7 @@ TodoList.PropTypes = {
 		completed: PropTypes.bool.isRequired
 	}).isRequired).isRequired,
 	onTodoClicked: PropTypes.func.isRequired,
-	onTodoDeleted: PropTypes.func.isRequired,
+	onTodoRemoved: PropTypes.func.isRequired,
 	onTodoUpdated: PropTypes.func.isRequired
 }		
 

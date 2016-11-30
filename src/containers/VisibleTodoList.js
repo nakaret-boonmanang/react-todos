@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { clickTodoCheckbox, updateTodo, deleteTodo} from '../actions'
+import { completeTodo, updateTodo, removeTodo} from '../actions'
 import TodoList from '../components/TodoList'
 
 // function for get visible todo list
@@ -23,8 +23,8 @@ const mapStateToProps = (state) => ({
 
 // mapping dispatch event to props
 const mapDispatchToProps = ({
-	onTodoClicked: clickTodoCheckbox,
-	onTodoDeleted: deleteTodo,
+	onTodoCompleted: completeTodo,
+	onTodoRemoved: removeTodo,
 	onTodoUpdated: updateTodo
 })
 
