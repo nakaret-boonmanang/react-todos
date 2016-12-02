@@ -7,7 +7,7 @@ const Todo = ({onCompleted, onUpdated, onRemoved, id, completed, title}) => {
 		<li>
 			<DoneTodo id={id} />
 			{' '}
-			<a style={{textDecoration: (completed) ? 'line-throught' : 'none'}}>{title}</a> 
+			<a style={{textDecoration: completed ? 'line-through' : 'none'}}>{title}</a> 
 			{' '}
 			<RemoveTodo id={id} />
 		</li>

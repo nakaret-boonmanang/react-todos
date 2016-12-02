@@ -1,14 +1,15 @@
 import React from 'react'
+import Link from './Link'
 
 const Filter = () => (
     <div>
         Filter
       	{" "}
-      	All
+      	<Link>All</Link>
       	{" "}
-      	Active
+      	<Link>Active</Link>
       	{" "}
-      	Completed
+      	<Link>Completed</Link>
     </div>
 )
 
