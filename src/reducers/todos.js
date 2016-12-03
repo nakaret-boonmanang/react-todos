@@ -4,6 +4,9 @@ const todo = (state, action) => {
       return {
         id: action.id,
         title: action.title,
+        description: action.description,
+        dateCreated: action.dateCreated,
+        dateUpdated: action.dateUpdated,
         completed: false
       }
     case 'COMPLETE_TODO':

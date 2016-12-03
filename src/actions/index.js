@@ -1,9 +1,12 @@
 let nextTodoId = 0
 
-export const addTodo = (title) => ({
+export const addTodo = (title, description) => ({
 	type: 'ADD_TODO',
 	id: nextTodoId++,
-	title
+	title,
+	description,
+	dateCreated: Date(),
+	dateUpdated: null
 })
 
 export const setFilterVisibility = (filter) => ({
@@ -17,10 +20,12 @@ export const completeTodo = (id, completed) => ({
 	completed
 })
 
-export const updateTodo = (id, title) => ({
+export const updateTodo = (id, title, description, dateUpdated) => ({
 	type: 'UPDATE_TODO',
 	id,
-	title
+	title,
+	description,
+	dateUpdated
 })
 
 export const removeTodo = (id) => ({
