@@ -38,7 +38,7 @@ body {
 /******* add todos *************/
 
 .todo-add{
-
+	position: relative;
 }
 
 .todo-add .fields{
@@ -52,6 +52,13 @@ body {
 
 .todo-add .values input {
 	width: 298px;
+}
+
+.todo-add .show-todo-add-icon{
+	position: absolute;
+	top:0px;
+	right: 0px;
+	cursor: pointer;
 }
 
 

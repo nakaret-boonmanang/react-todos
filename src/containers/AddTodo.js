@@ -7,7 +7,8 @@ let AddTodo = ({ dispatch }) => {
 
   return (
     <div className="todo-add">
-      <h4>Add TODO</h4>
+      <h4>Reminders</h4>
+      <span className="show-todo-add-icon">[+]</span>
       <form onSubmit={e => {
           e.preventDefault()
           
