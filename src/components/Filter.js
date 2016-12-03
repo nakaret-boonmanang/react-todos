@@ -1,15 +1,15 @@
 import React from 'react'
-import Link from './Link'
+import FilterLink from '../containers/FilterLink'
 
 const Filter = () => (
     <div>
         Filter
       	{" "}
-      	<Link>All</Link>
+      	<FilterLink filter="ALL" text="All"></FilterLink>
       	{" "}
-      	<Link>Active</Link>
+      	<FilterLink filter="ACTIVE" text="Active"></FilterLink>
       	{" "}
-      	<Link>Completed</Link>
+      	<FilterLink filter="COMPLETED" text="Completed"></FilterLink>
     </div>
 )
 
