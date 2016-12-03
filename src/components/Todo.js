@@ -5,11 +5,13 @@ import DoneTodo from '../containers/DoneTodo'
 const Todo = ({onCompleted, onUpdated, onRemoved, id, completed, title}) => {
 	return (
 		<li>
-			<DoneTodo id={id} />
-			{' '}
-			<a style={{textDecoration: completed ? 'line-through' : 'none'}}>{title}</a> 
-			{' '}
-			<RemoveTodo id={id} />
+			<div className="todo-checkbox">
+				<DoneTodo id={id} />
+			</div>
+			<div className="todo-title">
+				<a style={{textDecoration: completed ? 'line-through' : 'none'}}>{title}</a> 
+				<RemoveTodo id={id} />
+			</div>
 		</li>
 	)
 }

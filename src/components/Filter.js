@@ -2,8 +2,8 @@ import React from 'react'
 import FilterLink from '../containers/FilterLink'
 
 const Filter = () => (
-    <div>
-        Filter
+    <div className="filter">
+        Filter:
       	{" "}
       	<FilterLink filter="ALL" text="All"></FilterLink>
       	{" "}
