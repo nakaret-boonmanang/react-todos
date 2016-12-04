@@ -67,7 +67,6 @@ body {
 	border: solid 1px gray;
 	width: 100%;
 	min-height: 300px;
-	float: left;
 }
 
 .todo-list ul{
@@ -76,21 +75,30 @@ body {
 
 .todo-list ul li{
 	position: relative;
+	border-bottom: dotted 1px gray;
+	height: 25px;
+	line-height: 25px;
+}
+
+.todo-list ul li span{
+	padding: 5px;
+}
+
+.todo-list ul li span a{
+	cursor: pointer;
 }
 
 .todo-list .todo-checkbox{
 	width: 25px;
 	text-align: center;
 	float: left;
-	border-bottom: dotted 1px gray;
-	border-right: dotted 1px gray;
+	/*border-bottom: dotted 1px gray;*/
 }
 
 .todo-list .todo-title{
 	width: 270px;
 	float: right;
-	border-bottom: dotted 1px gray;
-	text-indent: 10px;
+	text-indent: 5px;
 }
 
 .todo-list .todo-title a{

@@ -2,8 +2,15 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
 
-let AddTodo = ({ dispatch }) => {
+let AddTodo = ({dispatch, todo, selected, onAddTodo }) => {
   let titleInput, descInput
+  
+  var title = (todo) ? todo.title : ''
+  var description = (todo) ? todo.description : ''
+
+  let onTitleChange = (e) => {
+    titleInput.value = e.target.value
+  }
 
   return (
     <div className="todo-add">
@@ -22,19 +29,21 @@ let AddTodo = ({ dispatch }) => {
           
         }}>
 
+        {/* title textbox */ }
         <div className="fields">
-          Title
+          {title}
         </div>
         <div className="values">
-          <input ref={node => {
+          <input type="text" ref={node => {
             titleInput = node
           }} />
         </div>
+        {/* value textbox */ }
         <div className="fields">
-          Description
+          {description}
         </div>
         <div className="values">
-          <input ref={node => {
+          <input type="text" ref={node => {
             descInput = node
           }} />
         </div>

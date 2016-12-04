@@ -1,12 +1,12 @@
 import React from 'react'
 import Filter from './Filter'
-import AddTodo from '../containers/AddTodo'
+import ViewTodoDialog from '../containers/ViewTodoDialog'
 import VisibleTodoList from '../containers/VisibleTodoList'
 
 const App = () => (
       <div className="container">
         <Filter /><br/>
-        <AddTodo />
+        <ViewTodoDialog />
         <VisibleTodoList />
       </div>
 )

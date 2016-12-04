@@ -1,17 +1,21 @@
 import React, {PropTypes} from 'react'
+import { connect } from 'react-redux'
 import RemoveTodo from '../containers/RemoveTodo'
 import DoneTodo from '../containers/DoneTodo'
+import { selectTodo } from '../actions'
 
-const Todo = ({onCompleted, onUpdated, onRemoved, id, completed, title}) => {
+let Todo = ({dispatch, onCompleted, onUpdated, onRemoved, id, completed, title}) => {
 	return (
+		// if want to binding dispatch must be binding by onClick={e => { // do soming}} prevent call directly
+		// because it will call dispatch imidiatly not by event.
 		<li>
-			<div className="todo-checkbox">
-				<DoneTodo id={id} />
-			</div>
-			<div className="todo-title">
-				<a style={{textDecoration: completed ? 'line-through' : 'none'}}>{title}</a> 
+			<span><DoneTodo id={id} /></span>
+			<span>
+				<a style={{textDecoration: completed ? 'line-through' : 'none'}} onClick={e => {
+			        dispatch(selectTodo(id))        
+			      }}>{title}</a> 
 				<RemoveTodo id={id} />
-			</div>
+			</span>
 		</li>
 	)
 }
@@ -23,5 +27,5 @@ Todo.PropTypes = {
 	completed: PropTypes.bool.isRequired,
 	title: PropTypes.string.isRequired
 }
-
+Todo = connect()(Todo)
 export default Todo;
