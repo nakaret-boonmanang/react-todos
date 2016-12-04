@@ -1,9 +1,13 @@
 import React, {PropTypes} from 'react'
 import Todo from './Todo'
 
-const TodoList = ({todos, onTodoCompleted, onTodoRemoved, onTodoUpdated}) => (
+const TodoList = ({todos, totalCompleted, onTodoCompleted, onTodoRemoved, onTodoUpdated}) => (
 	<div className="todo-list">
 		<ul style={{margin:'0px', padding: '0px'}}>
+			<li>
+				<span style={{marginLeft: '5px'}}>{totalCompleted}</span> 
+				<span>Completed</span>
+			</li>
 			{todos.map(todo =>
 				<Todo 
 					key={todo.id}

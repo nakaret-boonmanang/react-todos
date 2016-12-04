@@ -16,9 +16,23 @@ const getVisibleTodos = (todos, filter) => {
 	}
 }
 
+const totalFilter = (todos, filter) => {
+	switch (filter){
+		case "ALL":
+			return todos.length
+		case "COMPLETED":
+			return todos.filter(q => q.completed).length
+		case "ACTIVE":
+			return todos.filter(q => !q.completed).length
+		default:
+			return todos.length
+	}
+}
+
 // mapping state to props
 const mapStateToProps = (state) => ({
-	todos: getVisibleTodos(state.todos, state.filterVisibility)
+	todos: getVisibleTodos(state.todos, state.filterVisibility),
+	totalCompleted: totalFilter(state.todos, 'COMPLETED')
 })
 
 // mapping dispatch event to props
