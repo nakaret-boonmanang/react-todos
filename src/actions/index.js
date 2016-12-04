@@ -20,12 +20,12 @@ export const completeTodo = (id, completed) => ({
 	completed
 })
 
-export const updateTodo = (id, title, description, dateUpdated) => ({
+export const updateTodo = (id, title, description) => ({
 	type: 'UPDATE_TODO',
 	id,
 	title,
 	description,
-	dateUpdated
+	dateUpdated: Date()
 })
 
 export const removeTodo = (id) => ({

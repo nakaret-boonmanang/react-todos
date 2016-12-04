@@ -1,12 +1,14 @@
 import { connect } from 'react-redux'
-import { selectTodo} from '../actions'
+import { selectTodo, addTodo} from '../actions'
 import AddTodo from './AddTodo'
+import ViewTodo from './ViewTodo'
 
 // function for get visible todo list
 const getSelectedTodo = (todos, id) => {
 	var todo = todos.filter(q => q.id == id)
 	if(todo.length > 0)
 		return {
+			id: todo[0].id,
 			title: todo[0].title,
 			description: todo[0].description,
 			dateCreated: todo[0].dateCreated,

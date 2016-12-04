@@ -18,6 +18,19 @@ const todo = (state, action) => {
         ...state,
         completed: !state.completed
       }
+    case 'UPDATE_TODO':
+      if (state.id !== action.id) {
+        return state
+      }
+
+      return {
+        id: action.id,
+        title: action.title,
+        description: action.description,
+        dateCreated: state.dateCreated,
+        dateUpdated: action.dateUpdated,
+        completed: state.completed
+      }
     default:
       return state
   }
@@ -35,6 +48,9 @@ const todos = (state = [], action) => {
 		        todo(t, action)
 		     )
 		case 'UPDATE_TODO':
+      return state.map(t =>
+            todo(t, action)
+         )
 			break;
 		case 'REMOVE_TODO':
 			let newState = state.filter(function(obj){
