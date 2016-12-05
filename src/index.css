@@ -47,11 +47,15 @@ body {
 
 .todo-add .values{
 	margin-bottom: 5px;
-
 }
 
 .todo-add .values input {
 	width: 298px;
+}
+
+.todo-add .dates{
+	margin-bottom: 5px;
+	font-size: 12px;
 }
 
 .todo-add .buttons {
@@ -83,6 +87,11 @@ body {
 	border-bottom: dotted 1px gray;
 	height: 25px;
 	line-height: 25px;
+}
+
+.todo-list ul li.counter{
+	font-size: 14px;
+	font-weight: bold;
 }
 
 .todo-list ul li span{

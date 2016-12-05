@@ -9,7 +9,7 @@ let Todo = ({dispatch, onCompleted, onUpdated, onRemoved, id, completed, title})
 		// if want to binding dispatch must be binding by onClick={e => { // do soming}} prevent call directly
 		// because it will call dispatch imidiatly not by event.
 		<li>
-			<span><DoneTodo id={id} /></span>
+			<span><DoneTodo id={id} completed={completed} /></span>
 			<span>
 				<a style={{textDecoration: completed ? 'line-through' : 'none'}} onClick={e => {
 			        dispatch(selectTodo(id))        

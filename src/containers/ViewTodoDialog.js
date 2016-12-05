@@ -1,7 +1,6 @@
 import { connect } from 'react-redux'
 import { selectTodo, addTodo} from '../actions'
-import AddTodo from './AddTodo'
-import ViewTodo from './ViewTodo'
+import TodoDialog from './TodoDialog'
 
 // function for get visible todo list
 const getSelectedTodo = (todos, id) => {
@@ -32,6 +31,6 @@ const mapDispatchToProps = ({
 const ViewTodoDialog = connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(AddTodo)
+)(TodoDialog)
 
 export default ViewTodoDialog

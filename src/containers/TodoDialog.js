@@ -3,7 +3,7 @@ import Time from 'react-time'
 import { connect } from 'react-redux'
 import { addTodo, updateTodo, newTodo } from '../actions'
 
-let AddTodo = ({dispatch, todo, selected, onAddTodo }) => {
+let TodoDialog = ({dispatch, todo, selected, onAddTodo }) => {
   let titleInput, descInput
   let title = (todo) ? todo.title : ''
   let description = (todo) ? todo.description : ''
@@ -60,6 +60,8 @@ let AddTodo = ({dispatch, todo, selected, onAddTodo }) => {
               else{
                 // update selected todo
                 dispatch(updateTodo(todo.id, txt.title, txt.description))
+                // set default behavior as new todo
+                dispatch(newTodo())
               }
               clearAll()
           }} >
@@ -83,7 +85,7 @@ let AddTodo = ({dispatch, todo, selected, onAddTodo }) => {
             }} onFocus={onTextFocused} onBlur={onTextLostFocused} />
           </div>
           {/* Created Date */ }
-          <div className="values">
+          <div className="dates">
             {(todo) ? 'Created: ' : ''} 
             {(todo) ? <Time value={dateCreated} format="YYYY/MM/DD HH:mm" /> : ''} 
           </div>
@@ -98,6 +100,6 @@ let AddTodo = ({dispatch, todo, selected, onAddTodo }) => {
     </div>
   )
 }
-AddTodo = connect()(AddTodo)
+TodoDialog = connect()(TodoDialog)
 
-export default AddTodo
+export default TodoDialog

@@ -4,7 +4,7 @@ import Todo from './Todo'
 const TodoList = ({todos, totalCompleted, onTodoCompleted, onTodoRemoved, onTodoUpdated}) => (
 	<div className="todo-list">
 		<ul style={{margin:'0px', padding: '0px'}}>
-			<li>
+			<li className="counter">
 				<span style={{marginLeft: '5px'}}>{totalCompleted}</span> 
 				<span>Completed</span>
 			</li>
