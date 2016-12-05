@@ -54,6 +54,11 @@ body {
 	width: 298px;
 }
 
+.todo-add .buttons {
+	text-align: right;
+	margin-bottom: 10px;
+}
+
 .todo-add .show-todo-add-icon{
 	position: absolute;
 	top:0px;

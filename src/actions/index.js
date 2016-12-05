@@ -37,3 +37,7 @@ export const selectTodo = (id) => ({
 	type: 'SELECT_TODO',
 	id
 })
+
+export const newTodo = () => ({
+	type: 'NEW_TODO'
+})
