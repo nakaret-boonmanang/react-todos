@@ -4,10 +4,10 @@ import { removeTodo } from '../actions'
 
 let RemoveTodo = ({ dispatch, id }) => {
   return (
-      <span style={{cursor: 'pointer', position: 'absolute', top: '-5px', right: '10px'}} onClick={e => {
+      <span onClick={e => {
         e.preventDefault()
         dispatch(removeTodo(id))        
-      }}>
+      }} style={{cursor: 'pointer', position: 'absolute', top: '-5px', right: '10px'}} title="Delete Todo">
         x
       </span>
   )

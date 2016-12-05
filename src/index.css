@@ -19,20 +19,31 @@ body {
 	 float: left;
 }
 
+/******* Header *************/
+.header{
+	text-align: center;
+	padding: 5px 0 5px 0;
+	background-color: #00BCD4;
+	color: #FFF;
+	font-weight: bold;
+	border-bottom: solid 1px #FFF;
+}
+
 /******* Filter *************/
 
 .filter{
-	
+	padding: 5px 0 5px 0;
+	background-color: #00BCD4;
+	color: #FFF;
 }
 .filter span, .filter span a{
-/*	display: inline-block;
-	border:solid 1px #000;
+	display: inline-block;
 	text-align: center;
-	width: 100px;*/
+	width: 90px;
 	cursor: pointer;
 }
 .filter span.active{
-	font-weight: bold;
+	color: #000;
 }
 
 /******* add todos *************/
@@ -73,7 +84,7 @@ body {
 
 /******* todo list *************/
 .todo-list{
-	border: solid 1px gray;
+	border: solid 1px #F4F4F4;
 	width: 100%;
 	min-height: 300px;
 }
@@ -84,7 +95,7 @@ body {
 
 .todo-list ul li{
 	position: relative;
-	border-bottom: dotted 1px gray;
+	border-bottom: solid 1px #F4F4F4;
 	height: 25px;
 	line-height: 25px;
 }
@@ -117,4 +128,8 @@ body {
 
 .todo-list .todo-title a{
 	cursor: pointer;
+}
+
+.todo-list .todo-complete{
+	color: #0C850C;
 }

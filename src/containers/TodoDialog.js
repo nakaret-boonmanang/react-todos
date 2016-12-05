@@ -43,7 +43,7 @@ let TodoDialog = ({dispatch, todo, selected, onAddTodo }) => {
   return (
     <div className="todo-add">
       <h4>Reminders</h4>
-      <span className="show-todo-add-icon" onClick={e => {
+      <span className="show-todo-add-icon" title="Create new Todo" onClick={e => {
         dispatch(newTodo())
       }}>[+]</span>
       <form onSubmit={e => {

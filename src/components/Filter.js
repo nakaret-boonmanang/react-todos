@@ -3,8 +3,6 @@ import FilterLink from '../containers/FilterLink'
 
 const Filter = () => (
     <div className="filter">
-        Filter:
-      	{" "}
       	<FilterLink filter="ALL" text="All"></FilterLink>
       	{" "}
       	<FilterLink filter="ACTIVE" text="Active"></FilterLink>

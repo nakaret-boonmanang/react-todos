@@ -51,7 +51,6 @@ const todos = (state = [], action) => {
       return state.map(t =>
             todo(t, action)
          )
-			break;
 		case 'REMOVE_TODO':
 			let newState = state.filter(function(obj){
 				return obj.id !== action.id;

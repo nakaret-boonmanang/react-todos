@@ -11,9 +11,9 @@ let Todo = ({dispatch, onCompleted, onUpdated, onRemoved, id, completed, title})
 		<li>
 			<span><DoneTodo id={id} completed={completed} /></span>
 			<span>
-				<a style={{textDecoration: completed ? 'line-through' : 'none'}} onClick={e => {
+				<a onClick={e => {
 			        dispatch(selectTodo(id))        
-			      }}>{title}</a> 
+			      }} style={{textDecoration: completed ? 'line-through' : 'none'}} className={(completed) ? 'todo-complete' : ''} title="Click to see detail">{title}</a> 
 				<RemoveTodo id={id} />
 			</span>
 		</li>

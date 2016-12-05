@@ -1,10 +1,9 @@
 import { connect } from 'react-redux'
-import { selectTodo, addTodo} from '../actions'
 import TodoDialog from './TodoDialog'
 
 // function for get visible todo list
 const getSelectedTodo = (todos, id) => {
-	var todo = todos.filter(q => q.id == id)
+	var todo = todos.filter(q => q.id === id)
 	if(todo.length > 0)
 		return {
 			id: todo[0].id,
