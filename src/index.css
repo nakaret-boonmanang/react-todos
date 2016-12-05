@@ -113,6 +113,10 @@ body {
 	cursor: pointer;
 }
 
+.todo-list ul li span a:hover{
+	color: #ED6D06;
+}
+
 .todo-list .todo-checkbox{
 	width: 25px;
 	text-align: center;
