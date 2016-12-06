@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import { connect } from 'react-redux'
 import { completeTodo } from '../actions'
 
@@ -9,6 +9,12 @@ let DoneTodo = ({ dispatch, id, completed }) => {
       }}  />
   )
 }
+
+DoneTodo.PropTypes = {
+	id: PropTypes.number.isRequired,
+	completed: PropTypes.bool.isRequired
+}
+
 DoneTodo = connect()(DoneTodo)
 
 export default DoneTodo

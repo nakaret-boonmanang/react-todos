@@ -3,7 +3,7 @@ import Time from 'react-time'
 import { connect } from 'react-redux'
 import { addTodo, updateTodo, newTodo, setToggleDialog } from '../actions'
 
-let TodoDialog = ({dispatch, todo, selected, onAddTodo, toggleDialog}) => {
+let TodoDialog = ({dispatch, todo, toggleDialog}) => {
   let titleInput, descInput
   let title = (todo) ? todo.title : ''
   let description = (todo) ? todo.description : ''
@@ -100,13 +100,14 @@ let TodoDialog = ({dispatch, todo, selected, onAddTodo, toggleDialog}) => {
             <div className="fields"></div>
             <div className="buttons">
               <button type="submit">
-                {(todo) ? 'Update Todo' : 'Add Todo'}
+                {(todo) ? 'UPDATE TODO' : 'ADD TODO'}
               </button>
               {' '}
-              <button onClick={e => {
+              <button type="button" onClick={e => {
+                clearAll()
                 dispatch(newTodo())
               }}>
-                Clear All
+                NEW
               </button>
             </div>
         </form>
@@ -114,6 +115,7 @@ let TodoDialog = ({dispatch, todo, selected, onAddTodo, toggleDialog}) => {
     </div>
   )
 }
+
 TodoDialog = connect()(TodoDialog)
 
 export default TodoDialog

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import { connect } from 'react-redux'
 import { removeTodo } from '../actions'
 
@@ -12,6 +12,11 @@ let RemoveTodo = ({ dispatch, id }) => {
       </span>
   )
 }
+
+RemoveTodo.PropTypes = {
+	id: PropTypes.number.isRequired
+}
+
 RemoveTodo = connect()(RemoveTodo)
 
 export default RemoveTodo

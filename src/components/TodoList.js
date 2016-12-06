@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react'
 import Todo from './Todo'
 
-const TodoList = ({todos, totalCompleted, onTodoCompleted, onTodoRemoved, onTodoUpdated}) => (
+const TodoList = ({todos, totalCompleted}) => (
 	<div className="todo-list">
 		<ul style={{margin:'0px', padding: '0px'}}>
 			<li className="counter">
@@ -14,9 +14,6 @@ const TodoList = ({todos, totalCompleted, onTodoCompleted, onTodoRemoved, onTodo
 					id={todo.id}
 					title={todo.title}
 					completed={todo.completed}
-					onCompleted={() => onTodoCompleted(todo.id)}
-					onUpdated={() => onTodoUpdated(todo.id, todo.title)}
-					onDeleted={() => onTodoRemoved(todo.id)}
 				/>
 			)}
 		</ul>
@@ -29,9 +26,7 @@ TodoList.PropTypes = {
 		title: PropTypes.string.isRequired,
 		completed: PropTypes.bool.isRequired
 	}).isRequired).isRequired,
-	onTodoClicked: PropTypes.func.isRequired,
-	onTodoRemoved: PropTypes.func.isRequired,
-	onTodoUpdated: PropTypes.func.isRequired
+	totalCompleted: PropTypes.number.isRequired
 }		
 
 export default TodoList
