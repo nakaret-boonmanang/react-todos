@@ -19,7 +19,8 @@ const getSelectedTodo = (todos, id) => {
 // mapping state to props
 const mapStateToProps = (state) => ({
 	todo: getSelectedTodo(state.todos, state.selected),
-	selected: state.selected
+	selected: state.selected,
+	toggleDialog: state.toggleDialog
 })
 
 // mapping dispatch event to props

@@ -26,7 +26,6 @@ body {
 	background-color: #00BCD4;
 	color: #FFF;
 	font-weight: bold;
-	border-bottom: solid 1px #FFF;
 }
 
 /******* Filter *************/
@@ -35,6 +34,8 @@ body {
 	padding: 5px 0 5px 0;
 	background-color: #00BCD4;
 	color: #FFF;
+	border-top: solid 1px #FFF;
+	border-bottom: solid 1px #FFF;
 }
 .filter span, .filter span a{
 	display: inline-block;
@@ -48,45 +49,58 @@ body {
 
 /******* add todos *************/
 
-.todo-add{
+.todo-dialog{
 	position: relative;
 }
 
-.todo-add .fields{
+.todo-dialog .fields{
 
 }
 
-.todo-add .values{
+.todo-dialog .values{
 	margin-bottom: 5px;
 }
 
-.todo-add .values input {
+.todo-dialog .values input {
 	width: 298px;
 }
 
-.todo-add .dates{
+.todo-dialog .dates{
 	margin-bottom: 5px;
 	font-size: 12px;
 }
 
-.todo-add .buttons {
+.todo-dialog .buttons {
 	text-align: right;
 	margin-bottom: 10px;
 }
 
-.todo-add .show-todo-add-icon{
+.todo-dialog .toggle-dialog-icon{
 	position: absolute;
-	top:0px;
-	right: 0px;
+	top: 8px;
+	right: 10px;
 	cursor: pointer;
 }
 
+.todo-dialog .reminder{
+	text-indent: 10px;
+	background-color: #00BCD4;
+    color: #FFF;
+}
+
+.todo-dialog .reminder h4{
+	padding: 8px 0;
+	margin: 0px;
+}
+
+.todo-dialog .todo-dialog-content{
+	padding: 10px 0px;
+}
 
 /******* todo list *************/
 .todo-list{
 	border: solid 1px #F4F4F4;
-	width: 100%;
-	min-height: 300px;
+	min-height: 150px;
 }
 
 .todo-list ul{
@@ -136,4 +150,11 @@ body {
 
 .todo-list .todo-complete{
 	color: #0C850C;
+}
+
+.todo-list .todo-task a{
+	width: 230px;
+	white-space: nowrap;
+	overflow: hidden;
+    text-overflow: ellipsis; 
 }

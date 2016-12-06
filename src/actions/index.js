@@ -45,3 +45,8 @@ export const selectTodo = (id) => ({
 export const newTodo = () => ({
 	type: 'NEW_TODO'
 })
+
+export const setToggleDialog = (show) => ({
+	type: 'SET_TOGGLE_DIALOG',
+	show
+})

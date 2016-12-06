@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react'
 import { connect } from 'react-redux'
 import RemoveTodo from '../containers/RemoveTodo'
 import DoneTodo from '../containers/DoneTodo'
-import { selectTodo } from '../actions'
+import { selectTodo, setToggleDialog } from '../actions'
 
 let Todo = ({dispatch, onCompleted, onUpdated, onRemoved, id, completed, title}) => {
 	return (
@@ -10,8 +10,9 @@ let Todo = ({dispatch, onCompleted, onUpdated, onRemoved, id, completed, title})
 		// because it will call dispatch imidiatly not by event.
 		<li>
 			<span><DoneTodo id={id} completed={completed} /></span>
-			<span>
+			<span className="todo-task">
 				<a onClick={e => {
+					dispatch(setToggleDialog(true))
 			        dispatch(selectTodo(id))        
 			      }} style={{textDecoration: completed ? 'line-through' : 'none'}} className={(completed) ? 'todo-complete' : ''} title="Click to see detail">{title}</a> 
 				<RemoveTodo id={id} />
